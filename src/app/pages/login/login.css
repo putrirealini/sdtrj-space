@@ -1,0 +1,131 @@
+/* Mengatur gaya dasar untuk seluruh komponen halaman */
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Warna latar belakang abu-abu sangat muda */
+  font-family: 'Poppins', sans-serif; /* Ganti dengan font pilihanmu */
+}
+
+/* Kontainer utama dengan layout dua kolom */
+.login-container {
+  display: grid;
+  grid-template-columns: 500px 480px; /* <-- UBAH JADI INI */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 50px; 
+}
+/* --- Panel Kiri (Informasi) --- */
+.info-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.info-content h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #343a40;
+}
+
+.info-content .brand-name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #0d3b66; /* Biru tua */
+  margin: 0.5em 0 1.5em 0;
+}
+
+.info-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Panel Kanan (Form) --- */
+.form-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 100%;
+  /* max-width: 480px; */
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0d3b66;
+  margin-bottom: 35px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.forgot-password,
+.register-link a {
+  color: #0d3b66;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #0d3b66;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #1a5a99;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #6c757d;
+}
