@@ -1,0 +1,208 @@
+:host {
+  display: block;
+}
+
+.teacher-layout-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f0f2f5; /* Warna latar belakang halaman */
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+  width: 350px; /* Lebar Sidebar */
+  background-color: #E9E9E9;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0; /* Padding vertikal saja */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.02);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 30px 20px;
+  margin-bottom: 20px;
+}
+
+.school-logo {
+  width: 90px;
+  height: 90px;
+  margin-right: 15px;
+ 
+}
+
+.logo-container span {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #0d3b66; /* Warna brand */
+}
+
+.sidebar-nav {
+  flex-grow: 1; /* Agar menu mengisi ruang */
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px; /* Padding kiri-kanan dikurangi sedikit */
+  margin: 10px 10px; /* Tambah margin atas-bawah dan kiri-kanan */
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 8px; /* Tambahkan radius di sini agar transisi mulus */
+}
+
+.nav-item img {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  filter: grayscale(100%); /* Ikon default abu-abu */
+  transition: filter 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #D9D9D9;
+}
+
+.nav-item.active {
+  background-color: rgba(0, 0, 0, 0.06); /* Hitam dengan 6% opacity, lebih soft */
+  color: #000;
+}
+
+.nav-item.active img {
+  filter: none; /* Ikon berwarna saat aktif */
+}
+
+.logout-section {
+  margin-top: auto; /* Dorong ke bawah */
+  padding-top: 20px;
+}
+
+/* --- Main Content & Header Styling --- */
+.main-content {
+  flex-grow: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 150px; /* Tinggi Header */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  gap: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.search-bar-container {
+  position: relative;
+  width: 500px; /* Lebar search bar */
+  
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px 10px 45px; /* Sesuaikan padding untuk ikon */
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #E9E9E9;
+}
+
+.search-input::placeholder {
+  color: #adb5bd;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  filter: grayscale(100%);
+}
+
+.profile-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  overflow: hidden; /* Untuk gambar profil */
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar mengisi lingkaran */
+}
+
+/* --- Profile Dropdown Styling --- */
+
+/* Container untuk menjaga posisi dropdown */
+.profile-menu-container {
+  position: relative; /* Ini penting untuk positioning dropdown */
+}
+
+.profile-circle {
+  cursor: pointer; /* Ubah cursor jadi tangan saat di-hover */
+}
+
+/* Style untuk dropdown menu */
+.profile-dropdown {
+  position: absolute;
+  top: 65px; /* Jarak dari atas (dari ikon profil) */
+  right: 0;
+  width: 220px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 100; /* Pastikan menu muncul di atas konten lain */
+  border: 1px solid #f0f0f0;
+}
+
+.profile-dropdown h4 {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.profile-dropdown hr {
+  border: none;
+  border-top: 1px solid #e9ecef;
+  margin: 10px 0;
+}
+
+.profile-dropdown a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+.profile-dropdown a:hover {
+  color: #0d3b66;
+}
+
+
+
+.page-content {
+  padding: 40px;
+  flex-grow: 1;
+}
