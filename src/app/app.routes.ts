@@ -31,7 +31,7 @@ export const routes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, 
             { path: 'teacher-dashboard', component: TeacherDashboard }, 
             { path: 'my-folder', component: MyFolder },
-            { path: 'my-folder2', component: MyFolder2 },
+            { path: 'my-folder/:folderName', component: MyFolder2 },
             { path: 'my-schedule', component: MySchedule },
             { path: 'academic-calendar', component: AcademicCalendar }
         ]

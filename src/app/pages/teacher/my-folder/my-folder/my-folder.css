@@ -1,0 +1,51 @@
+.my-folder-container {
+  width: 100%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  margin-top: -130px; 
+}
+
+.welcome-banner {
+  width: 95%;
+  max-width: 1400px; 
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 30px;
+  width: 95%;
+  max-width: 1200px;
+}
+
+.folder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.folder-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.folder-icon {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+.folder-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
