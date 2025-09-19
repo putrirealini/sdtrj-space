@@ -1,0 +1,165 @@
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.folder-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  text-transform: capitalize;
+}
+.upload-button {
+  background-color: #0d3b66;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.file-list {
+  background-color: white;
+  border-radius: 8px;
+}
+.file-list-header, .file-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 3px solid #f0f0f0;
+}
+.file-list-header {
+  font-weight: 600;
+  color: #888;
+  font-size: 0.9rem;
+}
+.file-item:last-child {
+  border-bottom: none;
+}
+.file-item:hover {
+  background-color: #f8f9fa;
+}
+.file-item.clickable {
+  cursor: pointer;
+}
+
+/* Pengaturan Kolom */
+.col-name { flex: 4; }
+.col-last-modified { flex: 2; text-align: center; }
+.col-file-size { 
+    flex: 1; 
+    text-align: right;
+    padding-right: 60px;
+ }
+.col-options { flex: 0 0 50px; position: relative; display:flex; justify-content: flex-end; }
+
+/* Tombol Opsi (Titik Tiga) */
+.options-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+}
+.options-button:hover { background-color: #e9ecef; }
+.options-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 150px;
+  padding: 10px;
+  z-index: 10;
+}
+.options-menu a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #333;
+}
+.options-menu a:hover { background-color: #f8f9fa; }
+.options-menu hr { border: none; border-top: 1px solid #f0f0f0; margin: 5px 0; }
+
+.options-menu button {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.options-menu button:hover {
+  background-color: #f8f9fa;
+}
+
+/* Styling untuk Modal Upload */
+.upload-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.upload-modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+}
+.drop-zone {
+  border: 2px dashed #ced4da;
+  border-radius: 8px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #888;
+  background-color: #f8f9fa;
+}
+.drop-zone img { 
+    width: 70px;
+    margin-bottom: 20px; 
+ }
+
+ .drop-zone span {
+  font-size: 1.2rem; 
+  color: #666; 
+  font-weight: 500;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+.cancel-button, .upload-button-modal {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+  font-weight: 600;
+}
+.upload-button-modal {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: #0d3b66;
+  color: white;
+  border-color: #0d3b66;
+}
