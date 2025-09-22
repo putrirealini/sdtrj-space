@@ -1,0 +1,133 @@
+/* ====== Gaya Wadah Halaman Utama ====== */
+.page-container {
+  padding: 2rem;
+  background-color: #f4f7fa;
+  font-family: sans-serif;
+}
+
+/* ====== Gaya Header Halaman ====== */
+.header-section {
+  display: flex;
+  flex-direction: column; /* Mengubah arah item menjadi vertikal (atas-bawah) */
+  align-items: flex-start; /* Meratakan semua item ke kiri */
+  gap: 1.5rem; /* Memberi jarak antara judul dan baris di bawahnya */
+  margin-bottom: 2rem;
+}
+
+.header-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0; /* Menghapus margin bawaan h2 */
+}
+
+/* Baris yang berisi dropdown dan tombol */
+.actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%; /* Membuat baris ini mengambil lebar penuh */
+}
+
+/* Wadah dropdown dibuat fleksibel agar bisa memanjang */
+.teacher-select-wrapper {
+  flex-grow: 1; /* Ini adalah kunci agar dropdown memanjang */
+}
+
+.teacher-select-wrapper select {
+  width: 100%; /* Membuat elemen select mengisi wadahnya */
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.add-btn {
+  background-color: #0d2050;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+/* ====== Gaya Tabel ====== */
+.table-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.5rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: nowrap;
+}
+
+th {
+  color: #888;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+td {
+  color: #333;
+  font-size: 1rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ====== Gaya Baris Istirahat (Recess) ====== */
+.recess-row {
+  background-color: #f7f7f7;
+}
+
+.recess-time {
+  font-weight: 700;
+  color: #222;
+}
+
+.recess-activity {
+  text-align: center;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ====== Gaya Tombol di Bawah Tabel ====== */
+.footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.download-btn, .upload-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem; /* <-- TAMBAHKAN BARIS INI */
+  display: flex;      /* Optional: merapikan ikon dan teks */
+  align-items: center;/* Optional: merapikan ikon dan teks */
+  gap: 0.5rem;        /* Optional: memberi jarak ikon dan teks */
+}
+
+
+.download-btn { background-color: #0d2050; color: white; }
+.upload-btn { background-color: #e0e0e0; color: #333; }

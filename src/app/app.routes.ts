@@ -11,11 +11,10 @@ import { MySchedule } from './pages/teacher/my-schedule/my-schedule/my-schedule'
 import { AcademicCalendar } from './pages/teacher/academic-calendar/academic-calendar/academic-calendar';
 
 import { PrincipalDashboard } from './pages/principal/principal-dashboard/principal-dashboard';
-import { TeachersFolder } from './pages/principal/teachers-folder/teachers-folder/teachers-folder';
-import { TeacherSchedule } from './pages/principal/teacher-schedule/teacher-schedule/teacher-schedule';
+import { TeachersFolderComponent } from './pages/principal/teachers-folder/teachers-folder/teachers-folder';
+import { TeacherScheduleComponent } from './pages/principal/teacher-schedule/teacher-schedule/teacher-schedule';
 import { Announcement } from './pages/principal/announcement/announcement/announcement';
-import { PrincipalAcademicCalendar } from './pages/principal/principal-academic-calendar/principal-academic-calendar';
-
+import { PrincipalAcademicCalendarComponent } from './pages/principal/principal-academic-calendar/principal-academic-calendar';
 
 
 
@@ -43,11 +42,11 @@ export const routes: Routes = [
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'principal-dashboard', component: PrincipalDashboard }, 
-            { path: 'teachers-folder', component: TeachersFolder },
-            { path: 'teachers-schedule', component: TeacherSchedule }, 
+            { path: 'teachers-folder', component: TeachersFolderComponent },
+            { path: 'teachers-schedule', component: TeacherScheduleComponent }, 
             { path: 'announcement', component: Announcement },
-            { path: 'academic-calendar', component: PrincipalAcademicCalendar }
+            { path: 'academic-calendar', component: PrincipalAcademicCalendarComponent },
         ]
-    },
+    }
     
 ];

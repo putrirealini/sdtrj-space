@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrincipalAcademicCalendar } from './principal-academic-calendar';
+import { PrincipalAcademicCalendarComponent } from './principal-academic-calendar';
 
-describe('PrincipalAcademicCalendar', () => {
-  let component: PrincipalAcademicCalendar;
-  let fixture: ComponentFixture<PrincipalAcademicCalendar>;
+describe('PrincipalAcademicCalendarComponent', () => {
+  let component: PrincipalAcademicCalendarComponent;
+  let fixture: ComponentFixture<PrincipalAcademicCalendarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PrincipalAcademicCalendar]
+      imports: [PrincipalAcademicCalendarComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PrincipalAcademicCalendar);
+    fixture = TestBed.createComponent(PrincipalAcademicCalendarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
