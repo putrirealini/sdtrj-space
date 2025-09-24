@@ -1,0 +1,109 @@
+.dashboard-container {
+  width: 100%;
+  margin-top: -120px;
+}
+
+.welcome-banner {
+  display: block; /* Memastikan margin auto berfungsi */
+  width: 100%;
+  max-width: 1300px; /* <-- Atur lebar maksimum untuk mengecilkan */
+  margin: 0 auto 40px auto; /* <-- Menengahkan banner & memberi jarak bawah */
+  border-radius: 20px;
+}
+
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* --- Grid Pengumuman --- */
+.announcement-grid {
+  display: flex; /* <-- Ubah menjadi flex */
+  justify-content: center; /* <-- Tambahkan ini untuk menengahkan */
+  gap: 25px;
+  flex-wrap: wrap; /* Agar tetap rapi di layar kecil */
+}
+
+.announcement-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 150px;
+  width: 400px; /* <-- Tambahkan ini untuk lebar yang seragam */
+}
+
+.announcement-card h4 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+  flex-grow: 1; /* Mendorong tombol download ke bawah */
+}
+
+.announcement-card span {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0d3b66;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto; /* Mendorong tombol ke bagian bawah kartu */
+}
+
+/* --- Daftar File Terbaru --- */
+.recent-file-list {
+  background: white;
+  border-radius: 12px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  /* Tambahan untuk link */
+  text-decoration: none; /* Hapus garis bawah */
+  color: inherit; /* Gunakan warna teks dari parent */
+  cursor: pointer;
+}
+
+.file-item:last-child {
+  border-bottom: none;
+}
+
+.file-item.header {
+  font-weight: 600;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.col-name { flex: 3; }
+.col-date { flex: 2; text-align: center; }
+.col-size { flex: 1; text-align: right; }
+.col-options { flex: 0 0 50px; display: flex; justify-content: flex-end; }
+
+.options-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}

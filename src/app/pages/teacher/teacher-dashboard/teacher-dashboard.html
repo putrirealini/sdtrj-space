@@ -1,1 +1,38 @@
-<p>teacher-dashboard works!</p>
+<div class="dashboard-container">
+  <img src="images/teacher-welcome-banner.png" alt="Welcome Banner" class="welcome-banner">
+
+  <section class="dashboard-section">
+    <h3 class="section-title">
+      <img src="images/megaphone-icon.png" alt="Icon">
+      Official Announcement
+    </h3>
+    <div class="announcement-grid">
+      <div class="announcement-card" *ngFor="let item of announcements">
+        <h4>{{ item.title }}</h4>
+        <span>{{ item.date }}</span>
+        <a [href]="item.fileUrl" download class="download-link">
+            <img src="images/download-blue.png" alt="Download">
+            Download
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-section">
+    <h3 class="section-title">Recent File</h3>
+    <div class="recent-file-list">
+      <div class="file-item header">
+        <span class="col-name">Name</span>
+        <span class="col-date">Last modified</span>
+        <span class="col-size">File size</span>
+        <span class="col-options"></span>
+      </div>
+     <a [href]="file.fileUrl" target="_blank" class="file-item" *ngFor="let file of recentFiles">
+        <span class="col-name">{{ file.name }}</span>
+        <span class="col-date">{{ file.date }}</span>
+        <span class="col-size">{{ file.size }}</span>
+        <span class="col-options"></span>
+    </a>
+    </div>
+  </section>
+</div>

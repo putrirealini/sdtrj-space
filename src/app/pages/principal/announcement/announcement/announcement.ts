@@ -89,21 +89,20 @@ export class Announcement implements OnInit {
     // Isi form dengan data yang sudah ada
     this.announcementForm.patchValue({
       title: announcementToEdit.title,
-      description: '' // Deskripsi bisa dikosongkan atau ditambahkan ke interface jika ada
+      description: '' 
     });
     
     this.selectedFile = announcementToEdit.fileObject || null;
     this.selectedFileName = announcementToEdit.fileObject?.name || null;
 
-    this.showAddModal = true; // Buka modal
-    this.openMenuIndex = null; // Tutup menu opsi
+    this.showAddModal = true; 
+    this.openMenuIndex = null; 
   }
 
 
  
 
   openAnnouncement(item: AnnouncementData, event: MouseEvent): void {
-    // Cek agar tidak membuka file saat tombol download atau opsi diklik
     const target = event.target as HTMLElement;
     if (target.closest('.download-link, .options-container')) {
       return;
@@ -146,7 +145,6 @@ deleteAnnouncement(index: number, event: MouseEvent): void {
   toggleAddModal() {
     this.showAddModal = !this.showAddModal;
     if (!this.showAddModal) {
-      // Jika modal ditutup (misal klik cancel), reset semuanya
       this.announcementForm.reset();
       this.selectedFile = null;
       this.selectedFileName = null;
