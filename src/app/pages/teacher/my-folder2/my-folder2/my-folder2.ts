@@ -43,7 +43,7 @@ export class MyFolder2 implements OnInit {
 
   // Fungsi untuk membuka/menutup menu opsi (titik tiga)
   toggleOptionsMenu(index: number, event: MouseEvent) {
-    event.stopPropagation(); // <-- TAMBAHKAN BARIS INI
+    event.stopPropagation(); 
 
     if (this.openMenuIndex === index) {
       this.openMenuIndex = null;
@@ -57,21 +57,19 @@ export class MyFolder2 implements OnInit {
     this.showUploadModal = !this.showUploadModal;
   }
 
-  // Fungsi untuk menangani file yang dipilih dari pop-up
+
    onFileSelected(event: any): void {
     const file: File = event.target.files[0];
 
     if (file) {
-      // 1. Format Tanggal Hari Ini
       const today = new Date();
       const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
       const formattedDate = today.toLocaleDateString('en-US', options);
 
-      // 2. Format Ukuran File (dari Bytes ke KB)
       const fileSizeInKB = Math.round(file.size / 1024);
       const formattedSize = `${fileSizeInKB} KB`;
 
-      // 3. Buat objek file baru yang sesuai dengan format data kita
+
       const newFile = {
         name: file.name,
         lastModified: formattedDate,
@@ -79,7 +77,7 @@ export class MyFolder2 implements OnInit {
          fileObject: file
       };
 
-      // 4. Tambahkan file baru ke bagian paling atas daftar
+   
       this.files.unshift(newFile);
 
       console.log('File ditambahkan ke daftar:', newFile);

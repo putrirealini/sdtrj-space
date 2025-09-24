@@ -1,0 +1,144 @@
+.announcement-container {
+  margin-top: -120px; 
+}
+
+.welcome-banner {
+  display: block; 
+  max-width: 1300px; 
+  width: 100%; 
+  margin: 0 auto 30px auto; 
+  border-radius: 20px;
+}
+.page-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+.page-header h3 { 
+    font-size: 1.5rem; 
+    font-weight: 600; 
+}
+.add-button { 
+    background-color: #0d3b66; 
+    color: white;
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+/* Daftar Pengumuman */
+.announcement-list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+.announcement-item {
+  display: flex;
+  align-items: flex-start; 
+  background: white;
+  padding: 25px 20px; 
+  border-radius: 20px; 
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); 
+  position: relative; 
+  overflow: hidden; 
+}
+.item-icon { 
+    width: 30px; 
+    height: 50px; 
+    margin-right: 20px; 
+}
+.item-details {
+  flex-grow: 1; /* Agar mengisi ruang di tengah */
+  display: flex; /* Membuat konten di dalamnya bisa diatur */
+  flex-direction: column; /* Menyusun konten (judul, tanggal, download) secara vertikal */
+}
+
+.item-details h4 { 
+  margin: 0; 
+  font-size: 1.2rem; 
+  font-weight: 700; 
+  line-height: 1.4; 
+}
+
+.item-details span { 
+  font-size: 0.95rem; /* Ukuran tanggal sedikit lebih besar */
+  color: #666; /* Warna lebih gelap */
+  margin-top: 5px; /* Jarak dari judul */
+  display: block; /* Agar span mengambil baris baru */
+}
+
+.download-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0d3b66;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem; /* Sesuaikan ukurannya jika perlu */
+}
+.options-container {
+    position: absolute; /* Posisikan absolut */
+    top: 15px; /* Jarak dari atas */
+    right: 15px; /* Jarak dari kanan */
+}
+.options-button { background: none; border: none; cursor: pointer; padding: 5px; border-radius: 50%; }
+.options-button:hover { background-color: #f0f0f0; }
+.options-menu { position: absolute; top: 40px; right: 0; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 120px; padding: 10px; z-index: 10; }
+.options-menu a { display: block; padding: 8px; text-decoration: none; color: #333; }
+.options-menu a:hover { background-color: #f8f9fa; }
+.options-menu hr { border: none; border-top: 1px solid #f0f0f0; margin: 5px 0; }
+
+/* Styling untuk Modal Tambah Pengumuman */
+.modal-overlay {
+  position: fixed; /* Ini yang membuat modal "melayang" di atas halaman */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Memastikan modal ada di lapisan paling atas */
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+}
+.modal-content h3 { margin-top: 0; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; color: #888; font-size: 0.9rem; }
+.form-group input, .form-group textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif; }
+.attachment-button { display: flex; align-items: center; gap: 10px; background: none; border: 1px solid #ccc; padding: 10px; border-radius: 8px; cursor: pointer; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 15px; margin-top: 30px; }
+.cancel-button, .add-button-modal { padding: 10px 20px; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; font-weight: 600; }
+.add-button-modal { background-color: #0d3b66; color: white; border-color: #0d3b66; }
+
+.add-button-modal:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.selected-file-name {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+
+.form-group label span, .attachment-button span {
+  color: red;
+  margin-left: 2px;
+}
