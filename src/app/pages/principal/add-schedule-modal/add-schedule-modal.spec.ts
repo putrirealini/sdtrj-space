@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TeachersFolderComponent } from './teachers-folder';
+import { AddScheduleModalComponent } from './add-schedule-modal';
 
-describe('TeachersFolder', () => {
-  let component: TeachersFolderComponent;
-  let fixture: ComponentFixture<TeachersFolderComponent>;
+describe('AddScheduleModalComponent', () => {
+  let component: AddScheduleModalComponent;
+  let fixture: ComponentFixture<AddScheduleModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TeachersFolderComponent]
+      imports: [AddScheduleModalComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TeachersFolderComponent);
+    fixture = TestBed.createComponent(AddScheduleModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

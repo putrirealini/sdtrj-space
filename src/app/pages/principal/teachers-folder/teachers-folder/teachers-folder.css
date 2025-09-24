@@ -1,0 +1,51 @@
+/* ====== Gaya Wadah Halaman Utama ====== */
+.page-container {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+/* ====== Gaya untuk Grid Folder ====== */
+.folders-grid {
+  display: grid;
+  /* Membuat kolom yang responsif: minimal 220px, dan akan mengisi sisa ruang */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem; /* Jarak antar kartu */
+}
+
+/* ====== Gaya untuk Setiap Kartu Guru ====== */
+.teacher-card {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+/* Efek saat kursor mouse di atas kartu */
+.teacher-card:hover {
+  border-color: #0d2050; /* Warna border berubah menjadi biru tua */
+  box-shadow: 0 4px 15px rgba(13, 32, 80, 0.1); /* Bayangan lembut */
+}
+
+.teacher-avatar {
+  margin-bottom: 1rem;
+}
+
+.teacher-avatar svg {
+  width: 60px;
+  height: 60px;
+  fill: #0d2050; /* Warna ikon biru tua */
+}
+
+.teacher-name {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}

@@ -1,1 +1,45 @@
-<p>my-schedule works!</p>
+<div class="page-container">
+  <div class="header-section">
+    <div class="header-text">
+      <h2>Hello, Ms Putri!</h2>
+      <p>here is your teaching schedule</p>
+    </div>
+    <button class="download-btn" (click)="downloadSchedule()">
+      <span class="icon">⬇</span> Download
+    </button>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Days/Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of scheduleData" [class.recess-row]="item.activity">
+          <td>{{ item.period }}</td>
+          <td>{{ item.time }}</td>
+
+          <ng-container *ngIf="!item.activity">
+            <td>{{ item.monday }}</td>
+            <td>{{ item.tuesday }}</td>
+            <td>{{ item.wednesday }}</td>
+            <td>{{ item.thursday }}</td>
+            <td>{{ item.friday }}</td>
+          </ng-container>
+
+          <ng-container *ngIf="item.activity">
+            <td colspan="5">{{ item.activity }}</td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

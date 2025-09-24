@@ -1,0 +1,82 @@
+/* Mengatur wadah utama halaman */
+.page-container {
+  padding: 2rem;
+  background-color: #f4f7fa; /* Warna latar belakang abu-abu muda */
+}
+
+/* ====== Gaya untuk Header Image (Sebelumnya Banner) ====== */
+.header-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d2050; /* Warna biru tua */
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.banner-text h2 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.banner-text p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+
+.academic-calendar-banner {
+  /* Tambahan untuk memastikan gambar di tengah */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.academic-calendar-banner img {
+  /* Diperbesar dari 150px */
+  max-height: 350px; 
+}
+
+/* ====== Gaya untuk Area Konten Utama ====== */
+.content-area {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  /* ===== PERUBAHAN DI SINI ===== */
+  max-width: 1200px; /* 1. Batasi lebar maksimal agar tidak terlalu lebar di layar besar */
+  margin: 0 auto;    /* 2. Posisikan wadah ini di tengah halaman */
+}
+
+.content-area h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+/* ====== Gaya untuk Area Preview Gambar ====== */
+.image-preview-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.image-preview-wrapper img {
+  width: 100%;
+  max-width: 1100px; /* Ukuran gambar di dalam wadah */
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
