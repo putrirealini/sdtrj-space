@@ -1,0 +1,112 @@
+.dashboard-container {
+  width: 100%;
+  margin-top: -120px;
+}
+.welcome-banner {
+  display: block; /* Memastikan margin auto berfungsi */
+  width: 100%;
+  max-width: 1300px; /* <-- Atur lebar maksimum untuk mengecilkan */
+  margin: 0 auto 40px auto; /* <-- Menengahkan banner & memberi jarak bawah */
+  border-radius: 20px;
+}
+
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* --- Grid Pengumuman (Sama seperti Teacher Dashboard) --- */
+.announcement-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.announcement-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 150px;
+  width: 280px;
+}
+
+.announcement-card h4 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+  flex-grow: 1;
+}
+
+.announcement-card span {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0d3b66;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* --- Grid Folder Guru (Styling Baru) --- */
+.teacher-grid {
+  display: flex; /* <-- Ubah menjadi flex */
+  justify-content: center; /* <-- Tambahkan ini untuk menengahkan */
+  gap: 25px;
+  flex-wrap: wrap; /* <-- Agar tetap rapi di layar kecil */
+}
+
+.teacher-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+  width: 200px; /* <-- Tambahkan ini untuk lebar tetap */
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.teacher-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.teacher-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 5px 0;
+}
+
+.teacher-title {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
