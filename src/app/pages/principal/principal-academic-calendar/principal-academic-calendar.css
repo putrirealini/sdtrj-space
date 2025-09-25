@@ -1,7 +1,7 @@
 /* ====== Gaya Wadah Halaman Utama ====== */
 .page-container {
   padding: 2rem;
-  background-color: #f8f9fa; /* Warna latar belakang abu-abu sangat muda */
+  background-color: #ffff; /* Warna latar belakang abu-abu sangat muda */
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
