@@ -1,7 +1,13 @@
 <div class="folder-view-container">
   <div class="view-header">
-    <h2 class="folder-title">{{ folderName | titlecase }}</h2>
-    <div>
+    <div class="header-left">
+      <button (click)="goBack()" class="back-button">
+        <img src="images/back-arrow.png" alt="Back">
+      </button>
+      <h2 class="folder-title">{{ folderName | titlecase }}</h2>
+    </div>
+    
+    <div class="header-right">
       <button class="upload-button" (click)="fileInput.click()">
         Upload
       </button>
@@ -41,19 +47,6 @@
             <button (click)="downloadFile(file, $event)">Download</button>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="upload-modal-overlay" *ngIf="showUploadModal" (click)="toggleUploadModal()">
-  <div class="upload-modal-content" (click)="$event.stopPropagation()">
-    <div class="drop-zone">
-      <img src="images/upload-gray.png" alt="Upload">
-      <span>Drop file here</span>
-    </div>
-    <div class="modal-actions">
-      <button class="cancel-button" (click)="toggleUploadModal()">Cancel</button>
-      <button class="upload-button-modal"> Upload </button>
     </div>
   </div>
 </div>

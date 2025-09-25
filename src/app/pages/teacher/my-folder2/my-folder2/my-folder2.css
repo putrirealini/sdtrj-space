@@ -1,7 +1,29 @@
+/* Grup baru untuk tombol back dan judul */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
+/* Tombol back (sama seperti sebelumnya) */
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.back-button img {
+  width: 40px;
+}
 .view-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* <-- Ini kuncinya */
   align-items: center;
   margin-bottom: 30px;
 }

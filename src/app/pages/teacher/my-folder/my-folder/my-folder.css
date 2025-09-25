@@ -13,6 +13,16 @@
   margin-bottom: 40px;
 }
 
+.page-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  width: 95%; /* <-- Tambahkan ini */
+  max-width: 1200px; /* <-- Tambahkan ini (samakan dengan folder-grid) */
+  margin-bottom: 30px; /* <-- Tambahkan jarak ke bawah */
+}
+
 .folder-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
@@ -48,4 +58,16 @@
 .folder-name {
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Pastikan ikon di tengah */
+  background-color: #ffffff; /* Background putih */
+  border: none; /* Hapus garis */
+  padding: 10px; /* Sesuaikan padding untuk ikon saja */
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Tambah sedikit bayangan */
 }

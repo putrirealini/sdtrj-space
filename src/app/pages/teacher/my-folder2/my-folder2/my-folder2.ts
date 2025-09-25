@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Location } from '@angular/common';
 
 // Definisikan struktur data untuk sebuah file
 interface FileData {
@@ -32,8 +33,8 @@ export class MyFolder2 implements OnInit {
   openMenuIndex: number | null = null;
   showUploadModal = false;
 
-  constructor(private route: ActivatedRoute) { }
-
+  constructor(private route: ActivatedRoute, private location: Location) { }
+  
   ngOnInit(): void {
     // Mengambil nama folder dari URL untuk dijadikan judul
     this.route.paramMap.subscribe(params => {
@@ -127,5 +128,8 @@ export class MyFolder2 implements OnInit {
       alert('Download hanya berfungsi untuk file yang baru di-upload.');
     }
     this.openMenuIndex = null; // Menutup menu
+  }
+   goBack(): void {
+    this.location.back();
   }
 }
