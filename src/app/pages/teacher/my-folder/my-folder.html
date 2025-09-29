@@ -1,0 +1,12 @@
+<div class="my-folder-container">
+  <img src="images/my-folder-welcome.png" alt="My Folder Welcome Banner" class="welcome-banner" />
+
+  <div class="folder-grid">
+    <div *ngFor="let folder of myfolders">
+      <a [routerLink]="'/teacher/my-folder/' + folder.name" class="folder-card">
+        <img src="images/my-folder-icon.png" alt="Folder Icon" class="folder-icon" />
+        <span class="folder-name">{{ folder.name | titlecase }}</span>
+      </a>
+    </div>
+  </div>
+</div>

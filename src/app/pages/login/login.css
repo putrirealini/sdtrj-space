@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  gap: 50px; 
+  gap: 50px;
 }
 /* --- Panel Kiri (Informasi) --- */
 .info-panel {
@@ -134,4 +134,34 @@
   color: black;
   text-decoration: none; /* Hapus garis bawah */
 
+}
+
+/* Password Field */
+.password-field {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #374151;
+  background: #f3f4f6;
+}
+
+.password-toggle:focus {
+  outline: none;
+  color: #667eea;
+  background: #ede9fe;
 }

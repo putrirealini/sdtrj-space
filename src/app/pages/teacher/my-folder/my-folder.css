@@ -1,21 +1,21 @@
 .my-folder-container {
   width: 100%;
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-top: -130px; 
+  margin-top: -130px;
 }
 
 .welcome-banner {
   width: 95%;
-  max-width: 1400px; 
+  max-width: 1400px;
   border-radius: 12px;
   margin-bottom: 40px;
 }
 
 .folder-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   width: 95%;
   max-width: 1200px;

@@ -1,30 +1,30 @@
 <div class="teacher-layout-container">
   <aside class="sidebar">
     <div class="logo-container">
-      <img src="images/logo-sekolah.png" alt="School Logo" class="school-logo">
+      <img src="images/logo-sekolah.png" alt="School Logo" class="school-logo" />
       <span>SDTRJ-Space</span>
     </div>
     <nav class="sidebar-nav">
       <a routerLink="teacher-dashboard" routerLinkActive="active" class="nav-item">
-        <img src="images/dashboard-icon.png" alt="Dashboard Icon">
+        <img src="images/dashboard-icon.png" alt="Dashboard Icon" />
         <span>Dashboard</span>
       </a>
       <a routerLink="my-folder" routerLinkActive="active" class="nav-item">
-        <img src="images/folder-icon.png" alt="My Folder Icon">
+        <img src="images/folder-icon.png" alt="My Folder Icon" />
         <span>My Folder</span>
       </a>
       <a routerLink="my-schedule" routerLinkActive="active" class="nav-item">
-        <img src="images/schedule-icon.png" alt="My Schedule Icon">
+        <img src="images/schedule-icon.png" alt="My Schedule Icon" />
         <span>My Schedule</span>
       </a>
       <a routerLink="academic-calendar" routerLinkActive="active" class="nav-item">
-        <img src="images/calendar-icon.png" alt="Academic Calendar Icon">
+        <img src="images/calendar-icon.png" alt="Academic Calendar Icon" />
         <span>Academic Calendar</span>
       </a>
     </nav>
     <div class="logout-section">
-      <a href="login" class="nav-item">
-        <img src="images/logout-icon.png" alt="Log Out Icon">
+      <a (click)="logout()" class="nav-item">
+        <img src="images/logout-icon.png" alt="Log Out Icon" />
         <span>Log Out</span>
       </a>
     </div>
@@ -33,18 +33,18 @@
   <main class="main-content">
     <header class="header">
       <div class="search-bar-container">
-        <input type="text" placeholder="Search.." class="search-input">
-        <img src="images/search-icon.png" alt="Search Icon" class="search-icon">
+        <input type="text" placeholder="Search.." class="search-input" />
+        <img src="images/search-icon.png" alt="Search Icon" class="search-icon" />
       </div>
       <div class="profile-menu-container">
         <div class="profile-circle" (click)="toggleProfileMenu()">
-          <img src="images/profile-avatar.png" alt="Profile Avatar">
+          <img src="images/profile-avatar.png" alt="Profile Avatar" />
         </div>
 
         <div class="profile-dropdown" *ngIf="isProfileMenuOpen">
-          <h4>Indah Nurdiana</h4>
-          <hr>
-          <a href="login">Logout</a>
+          <h4>{{ user?.name }}</h4>
+          <hr />
+          <a (click)="logout()" class="logout">Logout</a>
         </div>
       </div>
     </header>

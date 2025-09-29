@@ -1,30 +1,39 @@
-<div class="dashboard-container">
-  <img src="images/principal-welcome-banner.png" alt="Welcome Banner" class="welcome-banner">
+<div class="dashboard-container" *ngIf="!loading">
+  <img src="images/principal-welcome-banner.png" alt="Welcome Banner" class="welcome-banner" />
 
+  <!-- Announcements -->
   <section class="dashboard-section">
     <h3 class="section-title">
-      <img src="images/megaphone-icon.png" alt="Icon">
-      Official Announcement
+      <img src="images/megaphone-icon.png" alt="Icon" />
+      Official Announcements
     </h3>
     <div class="announcement-grid">
       <div class="announcement-card" *ngFor="let item of announcements">
         <h4>{{ item.title }}</h4>
-        <span>{{ item.date }}</span>
-        <a href="#" class="download-link">
-          <img src="images/download-blue.png" alt="Download">
+        <span>{{ formatDate(item.createdAt) }}</span>
+        <a
+          *ngIf="item.attachment"
+          [href]="getFileUrl(item.attachment.filePath)"
+          target="_blank"
+          class="download-link"
+        >
+          <img src="images/download-blue.png" alt="Download" />
           Download
         </a>
       </div>
+      <p *ngIf="!announcements.length" class="empty-state">No announcements available.</p>
     </div>
   </section>
 
+  <!-- Teacher Folders -->
   <section class="dashboard-section">
-    <h3 class="section-title">Recent Teacher's Folder</h3>
+    <h3 class="section-title">Recent Teacher's Folders</h3>
     <div class="teacher-grid">
-      <div class="teacher-card" *ngFor="let teacher of teacherFolders">
-        <img src="images/teacher-avatar.png" alt="Avatar" class="teacher-avatar">
-        <h5 class="teacher-name">{{ teacher.name }}</h5>
-        <span class="teacher-title">{{ teacher.title }}</span>
+      <div class="teacher-card" *ngFor="let folder of teacherFolders">
+        <img src="images/teacher-avatar.png" alt="Avatar" class="teacher-avatar" />
+        <h5 class="teacher-name">{{ folder.latestFolder.teacherName }}</h5>
       </div>
+      <p *ngIf="!teacherFolders.length" class="empty-state">No teacher folders available.</p>
     </div>
   </section>
+</div>

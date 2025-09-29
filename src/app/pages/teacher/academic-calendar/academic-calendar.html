@@ -9,16 +9,19 @@
     </div>
   </div> -->
 
-  <div class="page-container">
+<div class="page-container">
   <div class="academic-calendar-banner">
-    <img src="images/AcademicCalendarBanner.png" alt="Academic Banner">
+    <img src="images/AcademicCalendarBanner.png" alt="Academic Banner" />
   </div>
 
   <div class="content-area">
     <h3>Tahun Pelajaran 2025-2026</h3>
-    
-    <div class="image-preview-wrapper">
-      <img src="images/AcademicCalendar.png" alt="Academic Calendar">
+
+    <div class="image-preview-wrapper" *ngIf="imageUrl">
+      <img [src]="imageUrl" alt="Academic Calendar" />
+    </div>
+    <div *ngIf="!imageUrl">
+      <p>Tidak ada kalender akademik yang tersedia.</p>
     </div>
   </div>
 </div>

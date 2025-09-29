@@ -1,17 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// Definisikan struktur data
-interface Announcement {
-  title: string;
-  date: string;
-}
-
-interface TeacherFolder {
-  name: string;
-  title: string;
-  avatarUrl: string;
-}
+import { PrincipalDashboardService } from '../../../services/principal/principal-dashboard.service';
 
 @Component({
   selector: 'app-principal-dashboard',
@@ -20,20 +9,36 @@ interface TeacherFolder {
   templateUrl: './principal-dashboard.html',
   styleUrl: './principal-dashboard.css'
 })
-export class PrincipalDashboard {
-  // Data palsu untuk pengumuman
-  announcements: Announcement[] = [
-    { title: 'New Student Orientation', date: '01, Jul 2025' },
-    { title: 'School Anniversary', date: '23, Jul 2025' },
-    { title: 'Sport Day', date: '30, Jul 2025' },
-  ];
+export class PrincipalDashboard implements OnInit {
+  announcements: any[] = [];
+  teacherFolders: any[] = [];
+  loading = true;
 
-  // Data palsu untuk folder guru
-  teacherFolders: TeacherFolder[] = [
-    { name: 'Ni Made Trisna Suryaningsih', title: 'S.Pd.', avatarUrl: 'images/avatar-icon.png' },
-    { name: 'Desak Made Diah Kumara Dewi', title: 'S.Pd.', avatarUrl: 'images/avatar-icon.png' },
-    { name: 'Ida Ayu Widiantari', title: 'SE', avatarUrl: 'images/avatar-icon.png' },
-    { name: 'Ni Kadek Nia Sucah Yanti', title: 'S.Pd', avatarUrl: 'images/avatar-icon.png' },
-    { name: 'Ni Made Ari Dwiayanti', title: 'S.Pd', avatarUrl: 'images/avatar-icon.png' },
-  ];
+  constructor(private dashboardService: PrincipalDashboardService) {}
+
+  ngOnInit() {
+    this.dashboardService.getDashboard().subscribe({
+      next: (res: any) => {
+        this.announcements = res.data.announcements;
+        this.teacherFolders = res.data.recentTeacherFolders;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Error loading dashboard', err);
+        this.loading = false;
+      }
+    });
+  }
+
+  formatDate(date: string): string {
+    return new Date(date).toLocaleDateString('id-ID', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    });
+  }
+
+  getFileUrl(filePath: string): string {
+    return `http://localhost:5000/${filePath}`; // ganti sesuai static serve
+  }
 }

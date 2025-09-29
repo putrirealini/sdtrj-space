@@ -1,0 +1,66 @@
+<div class="page-container">
+  <div class="header-section">
+    <h2>Teachers Schedule</h2>
+    <div class="actions">
+      <div class="teacher-select-wrapper">
+        <select name="teachers" id="teacher-select" (change)="onTeacherChange($event)">
+          <option value="">-- Select Teacher --</option>
+          <option *ngFor="let teacher of teachers" [value]="teacher._id">
+            {{ teacher.name }}
+          </option>
+        </select>
+      </div>
+      <button class="add-btn" (click)="openAddScheduleModal()">+ Add Schedule</button>
+    </div>
+  </div>
+
+  <div class="table-wrapper" *ngIf="selectedTeacherId && scheduleData.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Days/Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of scheduleData" [class.recess-row]="item.activity">
+          <td>{{ item.period }}</td>
+          <td [class.recess-time]="item.activity">{{ item.time }}</td>
+
+          <ng-container *ngIf="!item.activity">
+            <td>{{ item.monday }}</td>
+            <td>{{ item.tuesday }}</td>
+            <td>{{ item.wednesday }}</td>
+            <td>{{ item.thursday }}</td>
+            <td>{{ item.friday }}</td>
+          </ng-container>
+
+          <ng-container *ngIf="item.activity">
+            <td colspan="5" class="recess-activity">{{ item.activity }}</td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Kalau belum pilih teacher -->
+  <div class="empty-state" *ngIf="!selectedTeacherId">Please select a teacher to see schedule.</div>
+
+  <!-- Kalau teacher dipilih tapi belum ada data -->
+  <div class="empty-state" *ngIf="selectedTeacherId && scheduleData.length === 0">
+    No schedule available for this teacher.
+  </div>
+
+  <div class="footer-actions">
+    <button class="download-btn" (click)="downloadSchedule()">⬇ Download</button>
+    <button class="upload-btn" (click)="uploadSchedule()">⬆ Upload Schedule</button>
+  </div>
+</div>
+
+<app-add-schedule-modal *ngIf="isModalOpen" (close)="closeAddScheduleModal()">
+</app-add-schedule-modal>

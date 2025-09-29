@@ -1,22 +1,22 @@
 <div class="page-container">
-      <div class="banner-image">
-      <img src="images/AcademicCalendarBannerPrincipal.png" alt="Academic Calendar">
-    </div>
+  <div class="banner-image">
+    <img src="images/AcademicCalendarBannerPrincipal.png" alt="Academic Calendar" />
+  </div>
 
   <div class="upload-section">
     <label for="calendar-upload" class="upload-btn">
       <span>⬆</span> Upload Academic Calendar
     </label>
-    <input 
+    <input
       id="calendar-upload"
-      type="file" 
-      (change)="onFileSelected($event)" 
+      type="file"
+      (change)="onFileSelected($event)"
       accept="image/png, image/jpeg"
       class="visually-hidden"
-    >
+    />
   </div>
 
   <div class="image-preview" *ngIf="imageUrl">
-    <img [src]="imageUrl" alt="Preview of the uploaded academic calendar">
+    <img [src]="imageUrl" alt="Preview of the uploaded academic calendar" />
   </div>
 </div>

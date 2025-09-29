@@ -1,25 +1,33 @@
 <div class="dashboard-container">
-  <img src="images/teacher-welcome-banner.png" alt="Welcome Banner" class="welcome-banner">
+  <img src="images/teacher-welcome-banner.png" alt="Welcome Banner" class="welcome-banner" />
 
+  <!-- Announcements Section -->
   <section class="dashboard-section">
     <h3 class="section-title">
-      <img src="images/megaphone-icon.png" alt="Icon">
-      Official Announcement
+      <img src="images/megaphone-icon.png" alt="Icon" />
+      Official Announcements
     </h3>
     <div class="announcement-grid">
       <div class="announcement-card" *ngFor="let item of announcements">
         <h4>{{ item.title }}</h4>
-        <span>{{ item.date }}</span>
-        <a [href]="item.fileUrl" download class="download-link">
-            <img src="images/download-blue.png" alt="Download">
-            Download
+        <span>{{ formatDate(item.createdAt) }}</span>
+        <a
+          *ngIf="item.attachment"
+          [href]="getFileUrl(item.attachment.filePath)"
+          target="_blank"
+          class="download-link"
+        >
+          <img src="images/download-blue.png" alt="Download" />
+          Download
         </a>
       </div>
+      <p *ngIf="!announcements.length" class="empty-state">No announcements available.</p>
     </div>
   </section>
 
+  <!-- Recent Files Section -->
   <section class="dashboard-section">
-    <h3 class="section-title">Recent File</h3>
+    <h3 class="section-title">Recent Files</h3>
     <div class="recent-file-list">
       <div class="file-item header">
         <span class="col-name">Name</span>
@@ -27,12 +35,13 @@
         <span class="col-size">File size</span>
         <span class="col-options"></span>
       </div>
-     <a [href]="file.fileUrl" target="_blank" class="file-item" *ngFor="let file of recentFiles">
-        <span class="col-name">{{ file.name }}</span>
-        <span class="col-date">{{ file.date }}</span>
-        <span class="col-size">{{ file.size }}</span>
+      <a *ngFor="let file of recentFiles" [href]="file.fileUrl" target="_blank" class="file-item">
+        <span class="col-name">{{ file.fileName }}</span>
+        <span class="col-date">{{ formatDate(file.updatedAt) }}</span>
+        <span class="col-size">{{ formatFileSize(file.fileSize) }}</span>
         <span class="col-options"></span>
-    </a>
+      </a>
+      <p *ngIf="!recentFiles.length" class="empty-state">No recent files available.</p>
     </div>
   </section>
 </div>

@@ -30,7 +30,7 @@
   width: 90px;
   height: 90px;
   margin-right: 15px;
- 
+
 }
 
 .logo-container span {
@@ -106,7 +106,7 @@
 .search-bar-container {
   position: relative;
   width: 500px; /* Lebar search bar */
-  
+
 }
 
 .search-input {
@@ -205,4 +205,8 @@
 .page-content {
   padding: 40px;
   flex-grow: 1;
+}
+
+.logout {
+  cursor: pointer;
 }

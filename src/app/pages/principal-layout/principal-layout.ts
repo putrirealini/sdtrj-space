@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-principal-layout',
@@ -10,9 +11,17 @@ import { CommonModule } from '@angular/common';
 })
 export class PrincipalLayout {
   isProfileMenuOpen = false;
+  user: any;
+
+  constructor(private authService: AuthService) {
+    this.user = this.authService.getCurrentUser();
+  }
 
   toggleProfileMenu() {
     this.isProfileMenuOpen = !this.isProfileMenuOpen;
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }

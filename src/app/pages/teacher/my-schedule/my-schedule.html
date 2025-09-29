@@ -1,7 +1,7 @@
 <div class="page-container">
   <div class="header-section">
     <div class="header-text">
-      <h2>Hello, Ms Putri!</h2>
+      <h2>Hello, {{ user?.name }}!</h2>
       <p>here is your teaching schedule</p>
     </div>
     <button class="download-btn" (click)="downloadSchedule()">
