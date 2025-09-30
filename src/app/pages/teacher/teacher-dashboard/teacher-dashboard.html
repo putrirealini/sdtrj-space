@@ -41,7 +41,7 @@
         <span class="col-size">{{ formatFileSize(file.fileSize) }}</span>
         <span class="col-options"></span>
       </a>
-      <p *ngIf="!recentFiles.length" class="empty-state">No recent files available.</p>
+      <p *ngIf="!recentFiles" class="empty-state">No recent files available.</p>
     </div>
   </section>
 </div>

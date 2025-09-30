@@ -21,7 +21,6 @@ export class AcademicCalendar implements OnInit {
   loadAcademicCalendar(): void {
     this.academicCalendarService.getAnnouncements().subscribe({
       next: (response) => {
-        console.log('res : ', response.data)
         if (response && response.data) {
           // Asumsikan hanya ada satu kalender akademik terbaru
           const latestCalendar = response.data;

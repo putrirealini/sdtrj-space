@@ -39,7 +39,6 @@ export class PrincipalAcademicCalendarComponent {
 
     this.principalAcademicCalendarService.uploadAcademicCalendar(formData).subscribe({
       next: res => {
-        console.log('Upload success:', res);
         alert('Academic calendar uploaded successfully!');
       },
       error: err => {

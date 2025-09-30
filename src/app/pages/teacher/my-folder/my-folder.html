@@ -1,6 +1,13 @@
 <div class="my-folder-container">
   <img src="images/my-folder-welcome.png" alt="My Folder Welcome Banner" class="welcome-banner" />
 
+  <div class="page-header">
+    <button (click)="goBack()" class="back-button">
+      <img src="images/back-arrow.png" alt="Back" />
+    </button>
+    <h2 class="teacher-name">{{ user?.name }}'s Folder</h2>
+  </div>
+
   <div class="folder-grid">
     <div *ngFor="let folder of myfolders">
       <a [routerLink]="'/teacher/my-folder/' + folder.name" class="folder-card">

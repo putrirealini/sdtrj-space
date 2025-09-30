@@ -17,7 +17,7 @@ export class PrincipalDashboard implements OnInit {
   constructor(private dashboardService: PrincipalDashboardService) {}
 
   ngOnInit() {
-    this.dashboardService.getDashboard().subscribe({
+    this.dashboardService.getDashboardData().subscribe({
       next: (res: any) => {
         this.announcements = res.data.announcements;
         this.teacherFolders = res.data.recentTeacherFolders;

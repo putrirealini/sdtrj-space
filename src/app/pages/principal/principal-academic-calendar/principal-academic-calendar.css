@@ -1,14 +1,14 @@
-/* ====== Gaya Wadah Halaman Utama ====== */
+
 .page-container {
   padding: 2rem;
-  background-color: #f8f9fa; /* Warna latar belakang abu-abu sangat muda */
+  background-color: #ffff; 
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Pusatkan semua konten */
+  align-items: center;
 }
 
-/* ====== Gaya Header Banner ====== */
+
 .header-banner {
   display: flex;
   justify-content: space-between;
@@ -16,9 +16,9 @@
   background-color: #0d2050;
   color: white;
   padding: 2rem 3rem;
-  border-radius: 999px; /* Membuat bentuk pil yang sangat bulat */
+  border-radius: 999px; 
   width: 100%;
-  max-width: 900px; /* Lebar maksimal banner */
+  max-width: 900px;
   margin-bottom: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -39,13 +39,13 @@
   max-height: 400px;
 }
 
-/* ====== Gaya Tombol Upload ====== */
+
 .upload-section {
   margin-bottom: 2rem;
 }
 
 .upload-btn {
-  background-color: #4a5a94; /* Warna biru keabu-abuan */
+  background-color: #4a5a94; 
   color: white;
   border: none;
   border-radius: 999px;
@@ -62,10 +62,10 @@
 
 .upload-btn:hover {
   background-color: #394674;
-  transform: translateY(-2px); /* Efek sedikit terangkat */
+  transform: translateY(-2px); 
 }
 
-/* ====== Gaya Area Preview Gambar ====== */
+
 .image-preview {
   width: 100%;
   max-width: 900px;

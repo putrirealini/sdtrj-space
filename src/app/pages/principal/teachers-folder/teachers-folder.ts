@@ -22,7 +22,6 @@ export class TeachersFolderComponent implements OnInit {
         nip: res.data[key]['nip'],
         email: res.data[key]['email'],
       }));
-      console.log('teacher folders array', this.teacherFolders);
     });
   }
 }

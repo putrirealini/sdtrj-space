@@ -28,7 +28,6 @@ export class AddScheduleModalComponent implements OnInit {
   ngOnInit(): void {
     this.addScheduleService.getAllTeachers().subscribe({
       next: (res: any) => {
-        console.log('res', res);
         if (res.success && Array.isArray(res.data)) {
           this.teachers = res.data;
         }

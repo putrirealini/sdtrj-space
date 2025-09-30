@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TeacherFolderService {
-  private apiUrl = 'http://localhost:5000/api/folders/teachers';
+  private apiUrl = 'http://localhost:5000/api';
 
   constructor(private http: HttpClient) {}
 
@@ -17,6 +17,6 @@ export class TeacherFolderService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.get<any>(this.apiUrl, { headers });
+    return this.http.get<any>(`${this.apiUrl}/users/teachers`, { headers });
   }
 }

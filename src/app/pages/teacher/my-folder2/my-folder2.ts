@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { MyFolderService } from '../../../services/teacher/my-folder.service';
 
 interface FileData {
@@ -30,7 +30,8 @@ export class MyFolder2 implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private folderService: MyFolderService
+    private folderService: MyFolderService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -93,7 +94,6 @@ export class MyFolder2 implements OnInit {
 
       this.folderService.uploadFile(this.folderName, formData).subscribe({
         next: (res: any) => {
-          console.log('File uploaded:', res);
           this.loadFiles(this.folderName!); // reload list
           this.showUploadModal = false;
         },
@@ -157,5 +157,9 @@ export class MyFolder2 implements OnInit {
         this.openMenuIndex = null;
       }
     });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

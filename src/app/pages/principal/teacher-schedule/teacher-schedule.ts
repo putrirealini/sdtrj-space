@@ -25,7 +25,6 @@ export class TeacherScheduleComponent implements OnInit {
     // sementara dummy, nanti bisa fetch dari API /teachers
 
     this.teacherScheduleService.getAllTeacher().subscribe((res: any) => {
-      console.log('res', res)
       if (res.success) {
         this.teachers = res.data;
       }

@@ -49,7 +49,7 @@ export class PrincipalDashboardService {
 
   constructor(private http: HttpClient) {}
 
-  getDashboard(): Observable<DashboardResponse> {
+  getDashboardData(): Observable<DashboardResponse> {
     const token = localStorage.getItem('token'); // asumsi token disimpan di localStorage
 
     const headers = new HttpHeaders({
