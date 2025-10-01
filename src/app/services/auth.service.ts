@@ -62,6 +62,29 @@ export class AuthService {
     }
   }
 
+  register(name: string, email: string, password: string, nip: string): Observable<AuthResponse> {
+    this.isLoadingSubject.next(true);
+
+    return this.http.post<AuthResponse>(`${this.API_URL}/register`, { name, email, password, nip })
+      .pipe(
+        map(response => {
+          this.isLoadingSubject.next(false);
+          return response;
+        }),
+        catchError(error => {
+          this.isLoadingSubject.next(false);
+
+          // Handle error response
+          const errorResponse: AuthResponse = {
+            success: false,
+            message: error.error?.message || error.message || 'Registration failed'
+          };
+
+          return of(errorResponse);
+        })
+      );
+  }
+
   login(credentials: LoginRequest): Observable<AuthResponse> {
     this.isLoadingSubject.next(true);
 
