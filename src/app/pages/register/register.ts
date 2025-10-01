@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService, RegisterRequest } from '../../services/auth.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -76,17 +76,37 @@ export class Register implements OnInit {
     return fieldNames[fieldName] || fieldName;
   }
 
+  private markFormGroupTouched(): void {
+    Object.keys(this.registerForm.controls).forEach(key => {
+      const control = this.registerForm.get(key);
+      control?.markAsTouched();
+    });
+  }
+
   onSubmit(): void {
+    this.error = '';
+
+    // Check if form is valid
     if (this.registerForm.invalid) {
-      this.registerForm.markAllAsTouched();
+      this.markFormGroupTouched();
       return;
     }
 
-    const { name, email, password, nip } = this.registerForm.value;
+    const credentials: RegisterRequest = {
+      name: this.f['name'].value.trim(),
+      email: this.f['email'].value.trim(),
+      password: this.f['password'].value,
+      nip: this.f['nip'].value.trim(),
+    };
 
-    this.authService.register(name, email, password, nip).subscribe({
-      next: () => {
-        this.authService.redirectToDashboard();
+    this.authService.register(credentials).subscribe({
+      next: (response) => {
+        if (response.success) {
+          console.log('Registration success');
+          this.authService.redirectToDashboard();
+        } else {
+          this.error = response.message || 'Registration failed. Please try again.';
+        }
       },
       error: (error) => {
         this.error = error.error?.message || 'Registration failed. Please try again.';

@@ -19,6 +19,13 @@ export interface LoginRequest {
   password: string;
 }
 
+export interface RegisterRequest {
+  name: string;
+  email: string;
+  password: string;
+  nip: string;
+}
+
 export interface AuthResponse {
   success: boolean;
   message: string;
@@ -62,13 +69,21 @@ export class AuthService {
     }
   }
 
-  register(name: string, email: string, password: string, nip: string): Observable<AuthResponse> {
+  register(credentials: RegisterRequest): Observable<AuthResponse> {
     this.isLoadingSubject.next(true);
 
-    return this.http.post<AuthResponse>(`${this.API_URL}/register`, { name, email, password, nip })
+    return this.http.post<AuthResponse>(`${this.API_URL}/register`, credentials)
       .pipe(
         map(response => {
           this.isLoadingSubject.next(false);
+          if (response.success && response.data) {
+            // Store token and user data
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('user', JSON.stringify(response.data.user));
+
+            // Update current user
+            this.currentUserSubject.next(response.data.user);
+          }
           return response;
         }),
         catchError(error => {
