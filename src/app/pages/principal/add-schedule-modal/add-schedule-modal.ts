@@ -54,8 +54,7 @@ export class AddScheduleModalComponent implements OnInit {
         alert('Schedule saved successfully');
       },
       error: (err) => {
-        console.error('Error saving schedule:', err);
-        alert('Failed to save schedule');
+        alert(err.error?.message || 'Unknown error');
       }
     });
   }

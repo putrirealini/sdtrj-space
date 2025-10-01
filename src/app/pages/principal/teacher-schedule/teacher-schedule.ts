@@ -124,8 +124,8 @@ export class TeacherScheduleComponent implements OnInit {
           this.onTeacherChange({ target: { value: this.selectedTeacherId } } as any);
         }
       },
-      error: () => {
-        alert('Failed to upload schedule.');
+      error: (error) => {
+        alert('Failed to upload schedule: ' + (error.error?.message || 'Unknown error'));
       }
     });
   }
