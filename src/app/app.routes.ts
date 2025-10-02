@@ -17,6 +17,8 @@ import { TeacherScheduleComponent } from './pages/principal/teacher-schedule/tea
 import { Announcement } from './pages/principal/announcement/announcement';
 import { PrincipalAcademicCalendarComponent } from './pages/principal/principal-academic-calendar/principal-academic-calendar';
 import { AuthGuard } from './guards/auth.guard';
+import { TeacherFolderComponent } from './pages/principal/teacher-folder/teacher-folder';
+import { TeacherFolderDetailComponent } from './pages/principal/teacher-folder-detail/teacher-folder-detail';
 
 
 export const routes: Routes = [
@@ -47,6 +49,8 @@ export const routes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'principal-dashboard', component: PrincipalDashboard },
             { path: 'teachers-folder', component: TeachersFolderComponent },
+            { path: 'teacher-folder/:teacherId', component: TeacherFolderComponent },
+            { path: 'teacher-folder/:teacherId/:folderName', component: TeacherFolderDetailComponent },
             { path: 'teachers-schedule', component: TeacherScheduleComponent },
             { path: 'announcement', component: Announcement },
             { path: 'academic-calendar', component: PrincipalAcademicCalendarComponent },

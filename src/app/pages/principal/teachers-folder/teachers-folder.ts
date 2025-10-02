@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Diperlukan untuk *ngFor
 import { TeacherFolderService } from '../../../services/principal/teachers-folder.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-teachers-folder',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './teachers-folder.html',
   styleUrls: ['./teachers-folder.css']
 })

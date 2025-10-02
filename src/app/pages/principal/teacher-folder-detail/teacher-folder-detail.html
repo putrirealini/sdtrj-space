@@ -1,0 +1,68 @@
+<div class="folder-view-container">
+  <div class="view-header">
+    <div class="header-left">
+      <button (click)="goBack()" class="back-button">
+        <img src="images/back-arrow.png" alt="Back" />
+      </button>
+      <h2 class="folder-title">{{ folderName | titlecase }}</h2>
+    </div>
+    <div>
+      <button class="upload-button" (click)="fileInput.click()">Upload</button>
+      <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none" />
+    </div>
+  </div>
+
+  <div class="file-list">
+    <div class="file-list-header">
+      <span class="col-name">Name</span>
+      <span class="col-last-modified">Last modified</span>
+      <span class="col-file-size">File size</span>
+      <span class="col-options"></span>
+    </div>
+
+    <ng-container *ngIf="files && files.length > 0; else noFiles">
+      <div
+        class="file-item"
+        *ngFor="let file of files; let i = index"
+        (click)="openFile(file)"
+        [class.clickable]="file.fileObject"
+      >
+        <span class="col-name">{{ file.name }}</span>
+        <span class="col-last-modified">{{ file.lastModified }}</span>
+        <span class="col-file-size">{{ file.size }}</span>
+
+        <div class="col-options">
+          <button class="options-button" (click)="toggleOptionsMenu(i, $event)">
+            <img src="images/dots-icon.png" alt="Options" />
+          </button>
+
+          <div class="options-menu" *ngIf="openMenuIndex === i">
+            <button *ngIf="user?.id" (click)="deleteFile(user!.id, file, i, $event)">Delete</button>
+            <hr />
+            <button (click)="downloadFile(user!.id, file, $event)">Download</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Placeholder kalau kosong -->
+    <ng-template #noFiles>
+      <div class="file-item empty">
+        <span class="col-name" colspan="4">📂 No files uploaded yet</span>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<div class="upload-modal-overlay" *ngIf="showUploadModal" (click)="toggleUploadModal()">
+  <div class="upload-modal-content" (click)="$event.stopPropagation()">
+    <div class="drop-zone">
+      <img src="images/upload-gray.png" alt="Upload" />
+      <span>Drop file here</span>
+    </div>
+    <div class="modal-actions">
+      <button class="cancel-button" (click)="toggleUploadModal()">Cancel</button>
+      <button class="upload-button-modal">Upload</button>
+    </div>
+  </div>
+</div>

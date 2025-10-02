@@ -1,14 +1,16 @@
 <div class="page-container">
   <div class="folders-grid">
-    <div *ngFor="let teacher of teacherFolders" class="teacher-card" tabindex="0">
-      <div class="teacher-avatar">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-          />
-        </svg>
-      </div>
-      <p class="teacher-name">{{ teacher.name }}</p>
+    <div *ngFor="let teacher of teacherFolders">
+      <a [routerLink]="'/principal/teacher-folder/' + teacher.id" class="teacher-card" tabindex="0">
+        <div class="teacher-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+          </svg>
+        </div>
+        <p class="teacher-name">{{ teacher.name }}</p>
+      </a>
     </div>
   </div>
 </div>
